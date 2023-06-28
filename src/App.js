@@ -6,14 +6,31 @@ import WikimediaSearch from './WikimediaSearch';
 function App() {
   return (
     <div>
-      <h1 className='title'>Searchy</h1>
-      <div className='about'>
-        <AboutBox />
-      </div>
-      <div className='search'>
-        <WikimediaSearch />
-      </div>
+      <table className='searchTable'>
+        <tr className='search'>
+          <td className='left'></td>
+          <td classname='middle'>
+            <h1 className='title'>Searchy</h1>
+          </td>
+          <td>
+            <div className='about'>
+              <AboutBox />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td className='history'>
+            <h3 >History</h3>
+          </td>
+          <td >
+            <div>
+              <WikimediaSearch />
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
+
   );
 }
 

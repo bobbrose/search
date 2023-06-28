@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./WikimediaSearch.css"
 
 // Search over wikipedia and show the result in a table with thumbnail, if provided.
 function WikimediaSearch() {
@@ -14,11 +15,11 @@ function WikimediaSearch() {
       )
     } else {
       return (
-        <table>
+        <table className='searchResult'>
           <tbody>
             <tr key={data.title}>
-              <td><Thumbnail thumbnail={data.thumbnail} /></td>
-              <td>{data.extract}</td>
+              <td class='resultThumb'><Thumbnail thumbnail={data.thumbnail} /></td>
+              <td class='resultDescriptions'>{data.extract}</td>
             </tr>
           </tbody>
         </table>

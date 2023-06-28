@@ -1,0 +1,11 @@
+.searchResult {
+    margin: auto;
+    width: 100%;
+    
+    padding-top: 30px;
+
+}
+
+.resultThumb {
+    width: 20%;
+}

@@ -7,18 +7,37 @@ body {
 .alert {
   margin: 10px;
 }
-table {
-  width: 100%;
-}
-table {
-  border: 1px solid black;
-}
-.search {
+
+.searchTable {
   margin: auto;
-  width: 60%;
+  width: 100%;
   padding: 10px;
+
 }
 .about {
   float: right;
   margin-right: 20px;
+}
+.search {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+  border-width: 0px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  text-align: center;
+}
+.left {
+  width: 10%;
+}
+.middle {
+  width: 80%;
+}
+.history {
+  vertical-align: top;
+  width: 10%;
+}
+table, th, td {
+  border: 0px solid;
+  width: 90%;
 }
