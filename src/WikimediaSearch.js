@@ -3,8 +3,7 @@ import axios from 'axios';
 import "./WikimediaSearch.css"
 
 // Search over wikipedia and show the result in a table with thumbnail, if provided.
-function WikimediaSearch() {
-  const [searchTerm, setSearchTerm] = useState('');
+function WikimediaSearch({ inputRef, setSearchHistory, searchTerm, setSearchTerm }) {
   const [results, setResults] = useState([]);
 
   // For valid data, return a table with thumbnail and extract.
@@ -18,8 +17,8 @@ function WikimediaSearch() {
         <table className='searchResult'>
           <tbody>
             <tr key={data.title}>
-              <td class='resultThumb'><Thumbnail thumbnail={data.thumbnail} /></td>
-              <td class='resultDescriptions'>{data.extract}</td>
+              <td key='1' className='resultThumb'><Thumbnail thumbnail={data.thumbnail} /></td>
+              <td key='2' className='resultDescriptions'>{data.extract}</td>
             </tr>
           </tbody>
         </table>
@@ -48,19 +47,21 @@ function WikimediaSearch() {
   // Search wikimedia and put the result in the 'results'
   async function searchWikimedia() {
     try {
-      const encodedSearchTerm = encodeURIComponent(searchTerm);
+      const encodedSearchTerm = encodeURIComponent(inputRef.current.value);
       const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodedSearchTerm}`;
-
       const response = await axios.get(url);
       setResults([response.data]);
     } catch (error) {
       console.error('Error searching Wikimedia:', error);
       setResults([null]);
     }
+    setSearchHistory(searchTerm);
+    setSearchTerm('');
   }
   return (
     <div>
       <input
+        ref={inputRef}
         type="text"
         value={searchTerm}
         onKeyDown={handleKeyDown}

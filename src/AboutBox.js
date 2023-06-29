@@ -26,7 +26,7 @@ const AboutBox = () => {
             <button onClick={handleOpenModal}>About</button>
             <Modal isOpen={isOpen} onRequestClose={handleCloseModal} style={customStyles} >
                 <h2>Searchy</h2>
-                <p>A search interface for Wikipedida. <a href="https://bobbrose.com">Bob Rose</a></p>
+                <p>A search interface for Wikipedia. <a target="_new" href="https://bobbrose.com">Bob Rose</a></p>
                 <button onClick={handleCloseModal}>Close</button>
             </Modal>
         </div>

@@ -28,14 +28,16 @@ body {
   text-align: center;
 }
 .left {
-  width: 10%;
+  width: 20%;
 }
 .middle {
   width: 80%;
 }
 .history {
   vertical-align: top;
-  width: 10%;
+}
+.historyItem {
+  text-decoration: underline;
 }
 table, th, td {
   border: 0px solid;
