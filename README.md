@@ -31,6 +31,10 @@ To run this project locally:
 
 To create a production build, run `npm run build`
 
+## Demo
+
+Currently deployed on Vercel: [Searchy](https://search-seven-umber.vercel.app/)
+
 ## Author
 
 [Bob Rose](https://bobbrose.com)
